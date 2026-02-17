@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+/* ---- Global animations ---- */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 300ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 300ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* ---- MD Editor Overrides ---- */
+[data-color-mode="light"] .w-md-editor {
+  border: none !important;
+  box-shadow: none !important;
+  font-family: var(--font-work-sans), sans-serif;
+  background: transparent !important;
+}
+
+/* Toolbar */
+[data-color-mode="light"] .w-md-editor-toolbar {
+  background: hsl(0 0% 97%) !important;
+  border-bottom: 1px solid hsl(30 10% 88%) !important;
+  padding: 10px 16px !important;
+  min-height: 44px;
+}
+
+[data-color-mode="light"] .w-md-editor-toolbar ul {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+[data-color-mode="light"] .w-md-editor-toolbar li > button {
+  height: 28px;
+  width: 28px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  color: hsl(240 2% 55%);
+  transition: background-color 150ms, color 150ms;
+}
+
+[data-color-mode="light"] .w-md-editor-toolbar li > button:hover {
+  background: hsl(240 4.8% 95.9%);
+  color: hsl(240 5.9% 10%);
+}
+
+[data-color-mode="light"] .w-md-editor-toolbar li > button:active,
+[data-color-mode="light"] .w-md-editor-toolbar li.active > button {
+  background: hsl(240 4.8% 95.9%);
+  color: hsl(240 5.9% 10%);
+}
+
+[data-color-mode="light"] .w-md-editor-toolbar li > button svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Hide toolbar dividers (flat button row) */
+[data-color-mode="light"] .w-md-editor-toolbar li[data-name="divider"] {
+  display: none !important;
+}
+
+/* Content area */
+[data-color-mode="light"] .w-md-editor-content {
+  background: hsl(0 0% 100%) !important;
+  min-height: 200px;
+}
+
+[data-color-mode="light"] .w-md-editor-area {
+  padding: 24px 28px !important;
+}
+
+[data-color-mode="light"] .w-md-editor-text-pre,
+[data-color-mode="light"] .w-md-editor-text-input,
+[data-color-mode="light"] .w-md-editor-text {
+  font-family: var(--font-work-sans), sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+  color: hsl(240 4% 46%) !important;
+}
+
+/* Headings inside editor use Space Grotesk */
+[data-color-mode="light"] .w-md-editor-text-pre .title,
+[data-color-mode="light"] .w-md-editor-preview h1,
+[data-color-mode="light"] .w-md-editor-preview h2,
+[data-color-mode="light"] .w-md-editor-preview h3 {
+  font-family: var(--font-space-grotesk), sans-serif !important;
+}
+
+/* Remove default textarea outline/focus styles */
+[data-color-mode="light"] .w-md-editor-text-input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
