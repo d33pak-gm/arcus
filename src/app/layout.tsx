@@ -19,7 +19,9 @@ export const metadata: Metadata = {
   title: "Arcus - Plan & Build Your Apps",
   description: "Your AI planning workspace for builders",
   icons: {
-    icon: "/favicon.svg",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
   },
 };
 
