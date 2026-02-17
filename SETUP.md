@@ -56,16 +56,19 @@ You should see:
 
 ## AI Configuration
 
-We'll use **OpenAI API** with `gpt-4o-mini` for cost-effective AI features:
+We use **OpenRouter API** with free-tier models for AI features:
 - Feature extraction from PRDs
 - Knowledge generation
 - Tech stack analysis
 - Feature ideas generation
+- Context-aware chat assistant
 
-Add your OpenAI key to `.env.local`:
+Add your OpenRouter key to `.env.local`:
 ```bash
-OPENAI_API_KEY=sk-proj-...
+OPENROUTER_API_KEY=your_openrouter_api_key
 ```
+
+Get a free API key at [openrouter.ai](https://openrouter.ai).
 
 ## Next Steps (After Testing)
 
