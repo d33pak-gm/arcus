@@ -38,3 +38,13 @@ next-env.d.ts
 
 # convex
 .convex
+
+# claude
+.claude/
+
+# design files
+arcus-logo-concepts.html
+
+# internal docs
+previous_contexts.md
+projectplan.md
